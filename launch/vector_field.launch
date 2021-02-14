@@ -2,7 +2,7 @@
 
 <launch>
 
-	<!-- Run the node that controls the robot with vector fields -->
+	<!-- Run the node that controls the robot with vector fields (alpha) -->
 	<node pkg = "vector_field_control" name = "vector_field" type = "vec_field_alpha.py" args="" output="screen">
 		<rosparam command="load" file="$(find vector_field_control)/config/control_params.yaml" />
 	</node>

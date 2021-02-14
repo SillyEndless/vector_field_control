@@ -36,6 +36,7 @@ pose_topic_name: /turtle1/pose
 # TFMessage
 # Pose
 # Odometry
+# PoseTurtle
 pose_topic_type: PoseTurtle
 
 #Name of the topic in which the forward and angular velocities will be published
