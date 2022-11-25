@@ -202,7 +202,7 @@ def send_marker_to_rviz(pub_rviz, Vx, Vy):
 
     mark_ref = Marker()
 
-    mark_ref.header.frame_id = "/world"
+    mark_ref.header.frame_id = "world"
     mark_ref.header.stamp = rospy.Time.now()
     mark_ref.id = 0
     mark_ref.type = mark_ref.ARROW
