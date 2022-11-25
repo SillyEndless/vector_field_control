@@ -256,7 +256,7 @@ def load_parameters():
         cy = float(rospy.get_param("/vector_field/cy"))
         gamma = float(rospy.get_param("/vector_field/gamma"))
         if(gamma%2.0 != 0):
-            print " \33[41mParameter 'gamma' must be an even integer \33[0m"
+            print (" \33[41mParameter 'gamma' must be an even integer \33[0m")
         invert_direction = bool(rospy.get_param("/vector_field/invert_direction"))
         invert_motion_flag = rospy.get_param("/vector_field/invert_motion_flag")
         pose_topic_name = rospy.get_param("/vector_field/pose_topic_name")
@@ -279,7 +279,7 @@ def load_parameters():
         print("\33[94mcmd_vel_topic_name: " + cmd_vel_topic_name +"\33[0m")
         print ("")
     except:
-        print "\33[41mProblem occurred when trying to read the parameters!: vec_field_alpha.py\33[0m"
+        print ("\33[41mProblem occurred when trying to read the parameters!: vec_field_alpha.py\33[0m")
 
     return
 
@@ -319,7 +319,7 @@ def vector_field():
 
     rate = rospy.Rate(freq)
 
-    print "\33[92mVector field control started ...\33[0m\n"
+    print ("\33[92mVector field control started11111 ...\33[0m\n")
 
 
     #Loop
@@ -331,7 +331,8 @@ def vector_field():
 
         # Try to compute the vector field
         try:
-
+            print ("\33[92mV2222 ...\33[0m\n")
+  
             # Compute field
             [Vx_ref, Vy_ref] = vec_field_alpha(pos)
 
@@ -350,10 +351,11 @@ def vector_field():
 
             # Send markers to rviz
             send_marker_to_rviz(pub_rviz_ref, Vx_ref, Vy_ref)
+            print ("\33[92m333333333 ...\33[0m\n")
 
         except:
             # This is due to the changes in the curve's change
-            print "\33[93mProblem in the computation of the field !\33[0m"
+            print ("\33[93mProblem in the computation of the field !\33[0m")
 
 
         rate.sleep()

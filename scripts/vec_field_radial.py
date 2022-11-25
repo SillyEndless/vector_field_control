@@ -262,7 +262,7 @@ def vec_field_alpha(pos):
 
     print("[x, y] = %.2f, %.2f" % (x, y))
     print("[alpha, grad_x, grad_y] = %.2f, %.2f, %.2f" % (alpha, grad_x, grad_y))
-    print ""    
+    print ("")    
 
     # Normalize the gradient
     norm_grad = sqrt(grad_x**2+grad_y**2)
@@ -372,7 +372,7 @@ def load_parameters():
         print("\33[94mpath_topic_name: " + path_topic_name +"\33[0m")
         print ("")
     except:
-        print "\33[41mProblem occurred when trying to read the parameters!: vec_field_alpha.py\33[0m"
+        print ("\33[41mProblem occurred when trying to read the parameters!: vec_field_alpha.py\33[0m")
 
     return
 
@@ -398,13 +398,13 @@ def vector_field():
     # Subscriber for pose
     if(pose_topic_type == "TFMessage"):
     	rospy.Subscriber(pose_topic_name, TFMessage, callback_tf)
-    elif(pose_topic_type == "Pose"):
+    elif (pose_topic_type == "Pose"):
     	rospy.Subscriber(pose_topic_name, Pose, callback_pose)
-    elif(pose_topic_type == "Odometry"):
+    elif (pose_topic_type == "Odometry"):
     	rospy.Subscriber(pose_topic_name, Odometry, callback_odometry)
-    elif(pose_topic_type == "PoseTurtle"):
+    elif (pose_topic_type == "PoseTurtle"):
         rospy.Subscriber(pose_topic_name, PoseTurtle, callback_turtlesim_pose)
-    else:
+    else :
     	print("\33[41mInvalid value for pose_topic_type!\33[0m")
 
 
@@ -416,7 +416,7 @@ def vector_field():
 
     rate = rospy.Rate(freq)
 
-    print "\33[92mVector field control started ...\33[0m\n"
+    print ("\33[92mVector field control started ...\33[0m\n")
 
 
     #Loop
@@ -460,7 +460,7 @@ def vector_field():
                     vel.linear.x = 0.0
                     vel.angular.z = 0.0
 
-                    print "\33[92mEnd of path reached\33[0m"
+                    print ("\33[92mEnd of path reached\33[0m")
 
             # Publish velocity
             pub_cmd_vel.publish(vel)
